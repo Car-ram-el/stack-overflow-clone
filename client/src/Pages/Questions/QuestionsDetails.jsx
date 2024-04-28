@@ -46,15 +46,11 @@ const QuestionsDetails = () => {
     dispatch(deleteQuestion(id, Navigate));
   };
 
-  const [upClicked, setUpClicked] = useState(false);
-  const [downClicked, setDownClicked] = useState(false);
-  
   const handleUpVote = () => {
     if (User === null) {
       alert("Login or Sign up to up vote a question");
       Navigate("/Auth");
     } else {
-      setDownClicked(false); setUpClicked(prev=>!prev);
       dispatch(voteQuestion(id, "upVote",User.result._id));
     }
   };
@@ -64,7 +60,6 @@ const QuestionsDetails = () => {
       alert("Login or Sign up to down vote a question");
       Navigate("/Auth");
     } else {
-      setUpClicked(false); setDownClicked(prev=>!prev);
       dispatch(voteQuestion(id, "downVote",User.result._id));
     }
   };
