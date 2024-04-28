@@ -1,19 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+import {configureStore} from '@reduxjs/toolkit';
+
 import "./index.css";
 import App from "./App";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
-import Reducers from "./reducers";
+import reducers from "./reducers";
 
-const store = createStore(Reducers, compose(applyMiddleware(thunk)));
+// thunk- for async operations in redux
 
+const store = configureStore({reducer:reducers,middleware:(()=>[thunk])});
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store}>
-    <React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
       <App />
-    </React.StrictMode>
-  </Provider>
+    </Provider>
+  </React.StrictMode>
 );

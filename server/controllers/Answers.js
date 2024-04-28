@@ -4,7 +4,6 @@ import Questions from "../models/Questions.js";
 export const postAnswer = async (req, res) => {
   const { id: _id } = req.params;
   const { noOfAnswers, answerBody, userAnswered, answerUserId } = req.body;
-  const userId = req.userId;
 
   if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send("question unavailable...");
 
