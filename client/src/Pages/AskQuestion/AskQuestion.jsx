@@ -42,7 +42,7 @@ const AskQuestion = () => {
             <label htmlFor="ask-ques-body">
               <h4>Body</h4>
               <p>Include all the information someone would need to answer your question</p>
-              <textarea name="" id="ask-ques-body" onChange={(e) => {setQuestionBody(e.target.value); }} cols="30" rows="10" onKeyPress={handleEnter} ></textarea>
+              <textarea name="" id="ask-ques-body" onChange={(e) => {setQuestionBody(e.target.value); }} cols="30" rows="10" onKeyDown={handleEnter} ></textarea>
             </label>
 
             <label htmlFor="ask-ques-tags">

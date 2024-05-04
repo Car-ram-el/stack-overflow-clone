@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./Auth.css";
 import icon from "../../assets/icon.png";
@@ -49,10 +49,10 @@ const Auth = () => {
             <input type="email" name="email" id="email" value={email} onChange={(e) => {setEmail(e.target.value);}}/>
           </label>
           <label htmlFor="password">
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <h4>Password</h4>
               {!isSignup && 
-                <p style={{ color: "#007ac6", fontSize: "13px" }}>forgot password?</p>
+                <Link to={'/Auth/reset-password'} style={{ color: "#007ac6", fontSize: "13px" }}>Forgot password</Link>
               }
             </div>
             <input type="password" name="password" id="password" value={password} onChange= {(e) => {setPassword(e.target.value);}}/>

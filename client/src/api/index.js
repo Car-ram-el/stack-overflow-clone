@@ -1,8 +1,9 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://stack-overflow-clone-719g.onrender.com",
-  // baseURL: "http://localhost:5001",
+  // TODO
+  // baseURL: "https://stack-overflow-clone-719g.onrender.com",
+  baseURL: "http://localhost:5001",
 });
 
 API.interceptors.request.use((req) => {
@@ -13,6 +14,10 @@ API.interceptors.request.use((req) => {
 // auth
 export const logIn = (data) => API.post("/user/login", data);
 export const signUp = (data) => API.post("/user/signup", data);
+
+export const sendOtp = (data) => API.post("/user/reset-password/send-otp", data);
+export const verifyUser = (data) => API.post("/user/reset-password/verify", data);
+export const resetPass = (data) => API.patch("/user/reset-password/update", data);
 
 // questions
 export const postQuestion = (data) =>API.post("/questions/Ask", data);
