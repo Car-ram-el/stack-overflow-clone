@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-import {logIn, resetPass, sendOtp, verifyUser} from '../api/index';
+import {resetPass, sendOtp, verifyUser} from '../api/index';
 
 const ForgotPassword = () => {
   const [choice, setChoice] = useState('') // store the data and verify it
@@ -25,7 +25,8 @@ const ForgotPassword = () => {
     .then( e => {
       alert(e.data.message)
       setIsVerified(true);
-    }) .catch( e => alert("Incorrect credentials"))
+    }) 
+    .catch( e => alert("Incorrect credentials"))
   }
 
   const handleSubmit = async(e) => {
@@ -36,7 +37,8 @@ const ForgotPassword = () => {
         alert(f.data.message)
         console.log(f.data.message);
         navigate("/Auth");
-      }) .catch(f => alert("Some error occurred\nTry again"));
+      }) 
+      .catch(f => alert("Some error occurred\nTry again"));
     } else alert("Ensure all data is right")
   }
 
