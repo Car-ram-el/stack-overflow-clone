@@ -20,7 +20,7 @@ const ProfileBio = ({ currentProfile }) => {
             <h4>About</h4>
             <p>{currentProfile?.about}</p>
           </>:
-        <p>No bio found</p>
+        <p>No bio</p>
         }
       </div>
     </div>

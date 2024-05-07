@@ -35,8 +35,7 @@ const UserProfile = ({ slideIn }) => {
             </div>
 
             {currentUser?.result._id === id && 
-            <button type="button" onClick={() => setSwitch(true)} className="edit-profile-btn"><FontAwesomeIcon icon={faPen} /> Edit Profile</button>
-            }
+            <button type="button" onClick={() => setSwitch(true)} className="edit-profile-btn"><FontAwesomeIcon icon={faPen}/> Edit</button>}
           </div>
           <>
             {Switch ? 
