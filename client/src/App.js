@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router> {/* helps redirect legacy websites and web applications from modern browsers to legacy browsers like Internet Explorer */}
+      <Router>
         <Navbar handleSlideIn={handleSlideIn} />
         <AllRoutes slideIn={slideIn} handleSlideIn={handleSlideIn} />
       </Router>
